@@ -1,0 +1,15 @@
+ lsmod | more
+    modinfo bonding
+    modprobe bonding
+    lsmod | more
+    modinfo dm_mirror
+    modprobe -r bonding
+    lsmod | more
+    modprobe bonding
+    lsmod | more
+    modprobe -r bonding
+    lsmod | more
+    modprobe -r bonding
+    lsmod | more
+    modprobe bonding
+    lsmod | more
