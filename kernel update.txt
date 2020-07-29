@@ -1,0 +1,13 @@
+cat /etc/redhat-release
+  100  cd /run/media/root/RHEL-7.0\ Server.x86_64/Packages/
+  101  vim /boot/grub2/grub.cfg
+  102  df -hT
+  103  vim /boot/grub2/grub.cfg
+  104  rom -ivh kernel-debug-3.10.0-123.el7.x86_64.rpm 
+  105  rpm -ivh kernel-debug-3.10.0-123.el7.x86_64.rpm 
+  106  vim /boot/grub2/grub.cfg
+  107  reboot
+  108  uname -r
+  109  cat /etc/redhat-release
+  110  cat /etc/os-release
+  111  vim /etc/default
