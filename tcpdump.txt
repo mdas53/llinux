@@ -1,0 +1,6 @@
+ tcpdump
+   81  tcpdump   -c 5 -i bond0
+   82  tcpdump -c 5 -i bond0
+   83  tcpdump src port 22 -c 5
+   84  tcpdump dst port 22 -c 5 -w moulima.pcap
+   85  tcpdump -r moulima.pcap
