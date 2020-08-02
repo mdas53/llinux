@@ -1,0 +1,9 @@
+vmstat
+  394  vmstat 3
+  395  vmstat 3 7
+  396  vmstat -D
+  397  vmstat -d
+  398  itat
+  399  iostat
+  400  iostat 3
+  401  iostat 3 5
