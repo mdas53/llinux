@@ -1,0 +1,8 @@
+pgrep sshd
+  429  pgrep sshd -l
+  430  pgrep -u root
+  431  pgrep -u root -l
+  432  pgrep -u root -l bash
+  433  pgrep -u moulima
+  434  pgrep -u moulima -l
+  435  pgrep -u root,moulima -
