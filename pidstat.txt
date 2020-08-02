@@ -1,0 +1,9 @@
+pidstat
+  419  pidstat -p 5943 1
+  420  pidstat -p 2319 1
+  421  pidstat -p 7447 1
+  422  pidstat -c sshd
+  423  pidstat -p 2319 -d 1
+  424  pidstat -c "systemd"
+  425  pidstat -c "systemd" -d 1
+  426  pidstat -c java
