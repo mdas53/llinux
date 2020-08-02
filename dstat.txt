@@ -1,0 +1,13 @@
+yum install dstat
+  381  dstat -cdmn
+  382  dstat -gyprs
+  383  ls /var/log/sa
+  384  yum install sysstat -y
+  385  vim /etc/sysconfig/sysstat
+  386  sadf -s 09:00:00 -e 19:00:00 /var/log/sa/sa19
+  387  sadf -s 09:00:00 -e 15:00:00 /var/log/sa/sa19
+  388  sadf -d /var/log/sa/sa27 -- -urd -n dev
+  389  sadf -d /var/log/sa/sa27 -- -urd -n DEv
+  390  sadf -d /var/log/sa/sa27 -- -urd -n 
+  391  sadf -s 09:00:00 -e 19:00:00 /var/log/sa/sa19
+  392  sadf -s 09:00:00 -e 15:00:00 /var/log/sa/sa19
