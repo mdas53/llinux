@@ -1,0 +1,31 @@
+fdisk -l
+  267  reboot
+  268  fdisk -l
+  269  fdisk /dev/sdb
+  270  partprobe /dev/sdb
+  271  mkfs -t xfs /dev/sdb1
+  272  mkdir /storage
+  273  mount /dev/sdb1 /storage 
+  274  vim /etc/fstab
+  275  mkfs -t xfs /dev/sd2
+  276  mount /dev/sdb2 /storage 
+  277  df -hT
+  278  mkdir /storage1
+  279  mount /dev/sdb2 /storage1
+  280  umount /storage
+  281  mount /dev/sdb2 /storage1
+  282  reboot
+  283  fdisk -l
+  284  mount /dev/sdb2 /storage1
+  285  mount /dev/sdb2 /storage1
+  286  vim /etc/fstab
+  287  df -hT
+  288  fdisk /dev/sdb
+  289  partprobe /dev/sdb
+  290  mkswap /dev/sdb6
+  291  free -m
+  292  swapon /dev/sdb6
+  293  free -m
+  294  vim /etc/fstab
+  295  df -hT
+  
