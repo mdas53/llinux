@@ -1,0 +1,26 @@
+cat /etc/group | more
+   43  groupadd cgi
+   44  cd  Desktop
+   45  cat /etc/group | more
+   46  cat /etc/grouup
+   47  cat /etc/group
+   48  gpasswd -a user7 cgi
+   49  cat /etc/group
+   50  id user7
+   51  gpasswd -d user7 cgi
+   52  id user7
+   53  gpasswd -M user7 user6 user3  cgi
+   54  gpasswd -M user7,user6,user3  cgi
+   55  cat /etc/group
+   56  useradd -G cgi user5
+   57  useradd -G cgi user9
+   58  id user9
+   59  useradd -g cgi user11
+   60  id user11
+   61  cat /etc/passwd
+   62  groupadd blr
+   63  groupdel blr
+   64  groupdel cgi
+   65  userdel -r user11
+   66  groupdel cgi
+   
