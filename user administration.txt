@@ -1,0 +1,39 @@
+cat /etc/passwd | more
+    2  cat /etc/shadow | more
+    3  useradd user1
+    4  passwd user1
+    5  useradd -u 1200 -d /home/user02 -c admin -s /bin/csh user2
+
+    7  cd /home
+    8  ls
+    9  cat /etc/passwd
+   10  cat /etc/shadow
+   11  passwd user2
+   12  cat /etc/shadow
+   13  useradd user3
+   14  cat /etc/passwd
+   15  usermod -c trainer user1
+   16  cat /etc/passwd
+   17  t
+   18  T
+   19  usermod -s /sbin/nologin
+   20  usermod -s /sbin/nologin user1
+   21  cat /etc/passwd
+   22  usermod -s /bin/bash  user1
+   23  cat /etc/passwd
+   24  userdel user1
+   25  userdel -r user2
+   26  ls
+   27  userdel user1
+   28  ls
+   29  useradd user5
+   30  passwd user5
+   31  chage -l user5
+   32* 
+   33  chage -l user5
+   34  passwd user5
+   35  cat /etc/passwd
+   36  useradd -u 1450 user7
+   37  cat /etc/passwd
+   38  useradd user6
+   39  cat /etc/passwd
