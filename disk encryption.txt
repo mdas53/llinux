@@ -1,0 +1,16 @@
+cryptsetup luksFormat /dev/sdb3
+  298  cryptsetup luksFormat /dev/sdb3
+  299  cryptsetup luksOpen /dev/sdb3 sri
+  300  mkfs -t xfs /dev/mapper/sri
+  301  mkdir /secret
+  302  mount /dev/mapper/sri /secret
+  303  cryptsetup luksClose sri
+  304  umount /secret
+  305  cryptsetup luksClose sri
+  306  vim /etc/fstab
+  307  vim /etc/crypttab
+  308  reboot
+  309  vim /root/luks.key
+  310  cryptsetup luksAddKey /dev/sdb3 /root/luks.key
+  311  vim /etc/crypttab
+  312  reboot
