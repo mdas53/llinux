@@ -1,0 +1,10 @@
+ vim /etc/default/useradd
+  254  useradd abc
+  255  su - abc
+  256  vim /etc/default/useradd
+  257  echo $0
+  258  vim /etc/default/useradd
+  259  su - abc
+  260  ehco $0
+  261  echo $0
+
