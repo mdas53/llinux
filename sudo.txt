@@ -1,0 +1,13 @@
+visudo
+  239  cat /etc/passwd
+  240  cat /etc/shadow
+  242  visudo -f /etc/sudoers
+  243  visudo -f /etc/sudoers
+  244  groupmems -g wheel -l
+  245  gpasswd -a orguser03 wheel
+  246  visudo -f /etc/sudoers
+  247  gpasswd -a orguser003 wheel
+  248  visudo -f /etc/sudoers
+  249  gpasswd -r orguser003 wheel
+  250  gpasswd -d orguser003 wheel
+  251  groupmems -g wheel -l
