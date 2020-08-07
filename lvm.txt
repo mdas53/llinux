@@ -1,0 +1,23 @@
+df -hT
+  479  fdisk -l
+  480  fdisk /dev/sdb
+  481  partprobe /dev/sdb
+  482  pvcreate /dev/sdb8 /dev/sdb9
+  483  pvdisplay /dev/sdb8 /dev/sdb9
+  484  vgcreate vg1 /dev/sdb8 /dev/sdb9
+  485  vgdisplay vg1 /dev/sdb8 /dev/sdb9
+  486  vgdisplay vg1 
+  487  lvcreate -n lv1 -L 500M vg1
+  488  lvcreate -n lv2 -L 200M vg1
+  489  lvdisplay /dev/vg1/lv1     
+  490  lvdisplay /dev/vg1/lv2     
+  491  mkfs -t xfs /dev/vg1/lv1
+  492  mkdir /lvdata
+  493  mount /dev/vg1/lv1 /lvdata
+  494  df -hT
+  495  mkfs -t xfs /dev/vg1/lv2
+  496  mkdir /lv1data
+  497  mount /dev/vg1/lv2  /lv1data
+  498  df -hT
+  499  vim  /etc/fstab
+  500  reboot
