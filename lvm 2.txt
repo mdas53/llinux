@@ -1,0 +1,26 @@
+ df -hT
+  616  fdisk /dev/sdb
+  617  partprobe /dev/sdb
+  618  fdisk -l
+  619  pvcreate /dev/sdb10
+  621  vgdisplay vg1
+  622  vgextend vg1 /dev/sdb10
+  623  vgdisplay vg1
+  624  vgreduce vg1 /dev/sdb10
+  625  vgdisplay vg1
+  626  pvremove /dev/sdb10
+  627  pvs
+  628  pvcreate /dev/sdb10
+  629  pvs
+  630  vgcreate -s 16M cgi /dev/sdb10
+  631  pvdisplay /dev/sdb10
+  632  vgdisplay cgi
+  633  lvcreate -n lv1 -L 500M cgi
+  634  lvdisplay /dev/cgi/lv1
+  635  vgdisplay cgi
+  636  lvremove /dev/cgi/lv1
+  637  vgdisplay cgi
+  638  vgremove cgi
+  639  vgdisplay cgi
+  640  pvremove /dev/sdb10
+  641  fdisk -l
