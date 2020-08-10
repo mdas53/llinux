@@ -1,0 +1,5 @@
+lvdisplay
+  503  lvs
+  504  lvextend -L +300M /dev/vg1/lv1
+  505  xfs_growfs /dev/vg1/lv1
+  506  lvdisplay /dev/vg1/lv1
