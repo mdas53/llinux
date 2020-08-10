@@ -1,0 +1,18 @@
+yum install xfsdump -y
+  508  cd /run/media/root/RHEL-7.0\ Server.x86_64/Packages/
+  509  rpm -ivh vsftpd-3.0.2-9.el7.x86_64.rpm 
+  510  cd /var/ftp/pub
+  511  ls
+  512  mkdir packages
+  513  cd packages
+  514  pwd
+  515  cp -v /run/media/root/RHEL-7.0\ Server.x86_64/Packages/* /var/ftp/pub/packages/
+  516  pwd
+  517  createrepo /var/ftp/pub/packages/
+  518  systemctl restart vsftpd
+  519  systemctl enable vsftpd
+  520  cd /etc/yum.repos.d/
+  521  mv * /tmp/
+  522  vim server.repo
+  523  yum clean all
+  524  yum repolist
