@@ -1,0 +1,72 @@
+ getenforce
+  282  setenforce 0
+  283  getenforce
+  284  setenforce 1
+  285  getenforce
+  286  vim /etc/sysconfig/selinux
+  287  reboot
+  288  getenforce
+  289  setenforce 1
+  290  vim /etc/sysconfig/selinux
+  291  reboot
+  292  ls
+  293  ls -Z r1
+  294  pwd
+  295  cd /
+  296  ls
+  297  ls -Z
+  298  cd
+  299  cd Desktop
+  300  touch /tmp/r1
+  301  ls -Z /tmp/r1
+  302  chcon -Rt nfs_t r1
+  303  ls -Z r1
+  306  restorecon -R r1
+  307  ls -Z r1
+  310  semanage login -l
+  311  getsebool -a
+  312  getsebool -a | grep nfs
+  315  setsebool nfs_export_all_ro=0
+  316  getsebool -a | grep nfs
+  317  setsebool nfs_export_all_ro=1
+  318  getsebool -a | grep nfs
+  319  setsebool -P nfs_export_all_ro=1
+  320  getsebool -a | grep nfs
+
+server
+  322  yum install vsftpd -y
+  323  cd /var/ftp/pub
+  324  ls
+  325  cp /root/Desktop/* /var/ftp/pub
+  326  ls
+  327  systemctl restart vsftpd
+  328  iptables -F
+  329  ifconfig
+  330  getenforce
+  331  vim /etc/vsftpd/vsftpd.conf
+  332  cd /var/ftp
+  333  mkdir upload
+  334  chmod 777 upload/
+  335  systemctl restart vsftpd
+  336  getenforce
+  337  ls
+  338  cd uplaod/
+  339  cd uplaod
+  340  setenforce 0
+  341  getenforce
+  342  setenforce 1
+  343  getenforce
+  344  getsebool -a | grep ftp
+  345  setsebool -P ftpd_anon_write --> off
+  346  setsebool -P ftpd_anon_write=1
+  347  setsebool -P ftpd_full_access=1
+  348  getsebool -a | grep ftp
+ client
+ 8  cd /run/media/root/RHEL-7.0\ Server.x86_64/Packages/
+    9  rpm -ivh ftp
+   10  rpm -ivh ftp-0.17-66.el7.x86_64.rpm 
+   11  ftp 192.168.91.151
+   12  touch f1
+   13  cd
+   14  touch f1
+   15  ftp 192.168.91.151
