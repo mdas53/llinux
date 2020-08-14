@@ -1,0 +1,48 @@
+
+   62  vim client.repo
+   63  yum clean all
+   64  yum repolist
+   66  yum install autofs -y
+   67  vim /etc/auto.master
+   68  vim /etc/auto.misc
+   69  cd
+   70  vim /etc/auto.misc
+   71  systemctl restart autofs
+   72  cd /misc
+   73  df -hT
+   74  ls
+   75  cd abc
+   76  ls
+   77  df -hT
+   78  umount /nfsshare/
+   79  df -hT
+   80  cd
+   81  ls
+   82  vim /etc/auto.master
+   83  vim /etc/auto.misc
+   84  systemctl restart autofs
+   85  cd /
+   86  ls
+   87  cd xyz
+   88  ls
+   89  cd ..
+   90  df -hT
+   91  cd xyz
+   92  df -hT
+   93  cd /misc/
+   94  ls
+   96  df -hT
+   97  cd abc
+   98  ls
+   99  df -hT
+  100  vim /etc/auto.misc
+  101  systemctl restart autofs
+  102  cd
+  103  cd /misc/
+  104  ls
+  105  df -hT
+  106  cd 
+  107  cd /misc/
+  108  cd xyz
+  109  ls
+  110  df -hT
