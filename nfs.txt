@@ -1,0 +1,28 @@
+  yum install nfs-utils -y
+  361  mkdir /common/
+  362  cp * /common/
+  363  cd /common/
+  364  ls -ld /common/
+  365  vim /etc/exports
+  366  systemctl restart nfs
+  367  cd
+  370  iptables -F
+  371  systemctl restart vsftpd
+  372  yum repolist
+  373  cd /var/ftp/pub
+  374  ls
+  375  cd Packages
+  376  vim
+  377  cd packages
+  378  ls
+  379  systemctl restart vsftpd
+  380  iptables -F
+client
+  showmount -e  192.168.91.151
+    4  mkdir /nfsshare
+    5  mount -t nfs 192.168.91.151:/common /nfsshare
+    6  df -hT
+    7  cd /nfsshare/
+    8  ls
+    9  pwd
+   10  vim /etc/fstab
