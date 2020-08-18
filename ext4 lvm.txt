@@ -1,0 +1,23 @@
+ fdisk -l | more
+  502  fdisk /dev/sdb
+  503  partprobe /dev/sdb
+  504  pvcreate /dev/sdb11 /dev/sdb12
+  505  vgcreate blr /dev/sdb11 /dev/sdb12
+  506  vgdisplay blr
+  507  lvcreate -n lv1 -L 300M blr
+  508  lvdisplay lv1
+  509  lvdisplay 
+  510  mkfs -t ext4 /dev/blr/lv1
+  511  mkdir /rhel6
+  512  mount /dev/blr/lv1 /rhel6/
+  513  df -hT
+  514  lvextend -L +100M /dev/blr/lv1
+  515  lvdisplayyy
+  516  lvdisplay
+  517  umount /rhel6
+  518  df -hT
+  519  e2fsck -f /dev/blr/lv1
+  520  resize2fs /dev/blr/lv1 250M
+  521  lvreduce -L -150M /dev/blr/lv1
+  522  mount /dev/blr/lv1 /rhel6/
+  523  df -hT
