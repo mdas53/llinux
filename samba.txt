@@ -1,0 +1,39 @@
+SERVER
+ 
+yum install samba -y
+  383  cd /common/
+  384  ls
+  385  vim /etc/samba/samba.conf
+  386  vim /etc/samba/sam.conf
+  387  vim /etc/samba/smb.conf
+  388  systemctl restart smb
+  389  iptables -F
+  390  getenforce
+  391  setenforce 0
+  392  getenforce
+  393  chcon -Rt samba_share_t /common
+  394  ls -Zd /common/
+  395  getenforce
+  396  systemctl restart smb
+  397  iptables -F
+  398  vim /etc/samba/smb.conf
+  399  cd
+  400  systemctl restart smb
+  401  iptables -F
+  402  setenforce 1
+  403  getenforce
+  404  getsebool -a | grep samba
+  405  setsebool -P samba_create_home_dirs=1
+  406  setsebool -P domain_controller=1
+  407  setsebool -P samba_domain_controller=1
+  408  setsebool -P samba_enable_home_dirs=1
+  409  setsebool -P samba_export_all_ro=1
+  410  setsebool -P samba_export_all_rw=1
+  411  systemctl status smb
+  412  systemctl restart smb
+
+CLIENT
+ yum install samba-client* -y
+   15  smbclient -L //192.168.91.151
+   16  smbclient  //192.168.91.151/cgishare
+  
