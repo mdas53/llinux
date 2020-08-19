@@ -1,0 +1,84 @@
+iptables
+ iptables -L | more
+  468  iptables -F
+  469  iptables -t filter -I INPUT -s 192.168.91.151 -p tcp --dport 22 
+  470  iptables -t filter -I INPUT -s 192.168.91.151 -p tcp --dport 22 -j REJECT
+  471  iptables -L | more
+  472  iptables -t filter -I INPUT -s 192.168.91.151 -p tcp --dport 22 -j ACCEPT
+  473  iptables -L | more
+  474  iptables -t filter -I INPUT -s 192.168.91.150 -p tcp --dport 22 -j REJECT
+  475  iptables -L | more
+  476  iptables -t filter -I INPUT -s 192.168.91.150 -p tcp --dport 22 -j ACCEPT
+  477  iptables -t filter -I INPUT -s 192.168.91.150 -p tcp --dport 22 -j REJECT
+  478  iptables -t filter -I INPUT -s 192. -p tcp --dport 21 -j REJECT
+  479  iptables -L | more
+  480  iptables -L | more
+  481  iptables -t filter -I OUTPUT -d 192.168.91.150 -p tcp --dport 22 -j REJECT
+  482  iptables -L | more
+  483  iptables -t filter -I OUTPUT  -p icmp -j REJECT
+  484  iptables -t filter -I OUTPUT  -p icmp -j DROP
+  485  iptables -t filter -I OUTPUT  -p icmp -j REJECT
+  486  iptables -t filter -I OUTPUT  -p icmp -j ACCEPT
+  487  iptables -L | more
+  488  ssh root@194.168.91.150
+  489  ping 192.168.91.150
+  490  ping 192.168.91.150
+  491  ping 192.168.91.150
+firewalld
+ 
+  495  firewall-cmd --get-active-zones
+  496  firewall-cmd --permanent --zone=work --add-source=192.168.91.151
+  497  firewall-cmd --reload
+  498  firewall-cmd --get-active-zones
+  499  firewall-cmd  --zone=work --list-all
+  500  firewall-cmd --permanent --zone=work --add-service=http
+  501  firewall-cmd --reload
+  502  firewall-cmd  --zone=work --list-all
+  503  firewall
+  504  firewall-cmd --reload
+  505  firewall-cmd  --zone=work --list-all
+  506  yum intsall httpd -y
+  507  yum install zsh
+  508  yum intsall httpd -y
+  509  yum install httpd -y
+  510  cd /var/www/html/
+  511  ls
+  512  cat > index.html
+  513  systemctl restart httpd
+  514  firefox
+  515  systemctl restart httpd
+  516  firefox
+  517  firewall-cmd --permanent --zone=work --remove-source=192.168.91.151
+  518  firewall-cmd --permanent --zone=work --add-source=192.168.91.150
+  519  firewall-cmd --reload
+  520  firewall-cmd  --zone=work --list-all
+  521  systemctl restart httpd
+  522  firefox
+  523  firefox
+  524  curl http://server.example.com
+  525  firewall-cmd  --zone=dmz --list-all
+  526  firewall-cmd  --zone=dmz --list-all
+  527  firewall-cmd --permanent --zone=dmz --add-service=https
+  528  firewall-cmd --reload
+  529  firewall-cmd  --set-default-zone=dmz
+  530  firewall-cmd  --zone=dmz --list-all
+  531  firewall-cmd --permanent --zone-work --add-rich-rule 'rule family=ipv4 source address=192.168.91.150 forward-port port=443 protocol=tcp to-port=22'
+  532  firewall-cmd --permanent --zone=work --add-rich-rule 'rule family=ipv4 source address=192.168.91.150 forward-port port=443 protocol=tcp to-port=22'
+  533  firewall-cmd --reload
+  534  firewall-cmd  --zone=dmz --list-all
+  535  firewall-cmd --permanent --zone=work --add-rich-rule 'rule family=ipv4 source address=192.168.91.150 forward-port port=443 protocol=tcp to-port=22'
+  536  firewall-cmd --reload
+  537  firewall-cmd  --zone=dmz --list-all
+  538  firewall-cmd  --zone=work --list-all
+
+client
+  iptables -F
+   33  ssh root@192.168.91.151
+   34  vim /etc/hosts
+   35  vim /etc/hosts
+   36  firefox
+   37  vim /etc/hosts
+   38  firefox
+   39  firefox
+   40  curl http://server.example.com
+   41  ssh -p 443 root@192.168.91.151
