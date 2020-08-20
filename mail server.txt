@@ -1,0 +1,17 @@
+ yum install postfix -y
+  504  vim /etc/postfix/main.cf
+  505  hostname
+  506  systemctl restart postfix
+  507  systemctl enable  postfix
+  508  mail moulima@server.example.com
+  509  mail moulima@server.example.com
+  510  vim /etc/postfix/main.cf
+  511  vim /etc/postfix/virtual
+  512  vim /etc/postfix/main.cf
+  513  postmap /etc/postfix/virtual
+  514  systemctl restart postfix
+  515  mail moulima@server.example.com
+  516  postmap /etc/postfix/virtual
+  517  vim /etc/postfix/virtual
+  518  postmap /etc/postfix/virtual
+  519  mail moulima@server.example.com
