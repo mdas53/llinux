@@ -1,0 +1,24 @@
+  fdisk -l | more
+  501  vgdisplay
+  502  vgs
+  503  pvs
+  504  vgdisplay -v blr | more
+  505  dd if=/dev/zero of=/dev/sdb11 bs=1024 count=1
+  506  vgdisplay -v blr | more
+  507  lvs -a -o +devices
+  508  vgchange -an --partial
+  509  vim /etc/lvm/lvm.conf
+  510  vim /etc/lvm/backup/blr
+  511  pvcreate --uuid "3ty5lz-nX2i-Ejwj-LsUK-pq2v-WS8n-B46kHq" --restorefile /etc/lvm/backup/blr /dev/sdb11
+  512  vgcfrestore /dev/blr
+  513  vgcfgrestore /dev/blr
+  514  vhchange -ay /dev/blr
+  515  vgchange -ay /dev/blr
+  516  vfdisplay -v blr
+  517  vgdisplay -v blr
+  518  cd /etc/lvm
+  519  ls
+  520  cd bakup/
+  521  cd backup/
+  522  ls
+  523  vim blr
