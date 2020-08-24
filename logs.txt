@@ -1,0 +1,32 @@
+ systemctl status rsyslog
+  501  systemctl restart rsyslog.service
+  502  vim /etc/logrotate................conf
+  503  vim /etc/logrotate.conf
+  504  cd /etc/cron.daily/
+  505  ls
+  506  cat logrotate
+  507  cd /var/log
+  508  cd /var/log/
+  509  cat secure | grep sriram
+  510  cat secure | grep ldap
+  511  cat /var/log/messages | grep ldap
+  512  cat /var/log/messages | grep sriram
+  513  cat /var/log/messages | grep cron
+  514  cat /var/log/messages | grep logical
+  515  journalctl _UID=0
+  516  journalctl _PID=1
+  517  journalctl --since yesterday
+  518  journalctl -u slapd
+  519  journalctl -b
+  520  cd /var/log/audit
+  521  ls
+  522  vim audit.log
+  523  cat audit.log | grep selinux
+  524  pwd
+  525  setenforce 0
+  526  setenforce 1
+  527  cat audit.log | grep enforcing
+  528  auditctl -w /etc/passwd -p wra -k passwd
+  529  cat /etc/passwd
+  530  vim audit.log | grep passwd
+  531  tty
