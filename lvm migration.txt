@@ -1,0 +1,26 @@
+  df -hT
+  526  fdisk -l | grep sd
+  527  lvs
+  528  vgs -o+devices
+  529  fdisk /dev/sdb
+  530  partprobe /dev/sdb
+  531  pvcreate /dev/sdb13
+  532  vgextend blr /dev/sdb13
+  533  vgs
+  534  vgdisplay blr -v
+  535  lvs -o+devices
+  536  lvconvert -m 1 /dev/blr/lv1 /dev/sdb13
+  537  lvs -o+devices
+  538  lvconvert -m 0  /dev/blr/lv1 /dev/sdb11
+  539  lvs -o+devices
+  540  df -hT\
+  541  mkdir /cgi
+  542  mkdir /cgi1
+  543  mount /dev/blr/lv1 /cgi1
+  544  cd /cgi1
+  545  ls
+  546  vgreduce blr /dev/sdb11
+  547  vgdiaplay blr -v
+  548  vgdisaplay blr -v
+  549  vgdisplay blr -v
+  550  df -hT
