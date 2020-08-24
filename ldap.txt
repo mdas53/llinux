@@ -1,0 +1,39 @@
+LDAP Server Configuration 
+    1  yum -y install openldap compat-openldap openldap-clients openldap-servers openldap-servers-sql openldap-devel -y
+    2  systemctl restart slapd
+    3  netstat -antup | grep -i 389
+    4  slappasswd 
+    5  cd /etc/openldap/slapd.d/
+    6  vim cn\=config/olcDatabase\=\{2\}hdb.ldif 
+    7  cd
+    8  vi db.ldif
+    9  ldapmodify -Y EXTERNAL  -H ldapi:/// -f db.ldif
+   10  vi monitor.ldif
+   11  ldapmodify -Y EXTERNAL  -H ldapi:/// -f monitor.ldif
+   12  cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
+   13  chown ldap:ldap /var/lib/ldap/*
+   14  ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/cosine.ldif
+   15  ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/nis.ldif 
+   16  ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/inetorgperson.ldif
+   17  vi base.ldif
+   18  ldapadd -x -W -D "cn=ldapadm,dc=example,dc=com" -f base.ldif
+   19  vim base.ldif 
+   20  ldapadd -x -W -D "cn=ldapadm,dc=example,dc=com" -f base.ldif
+   21  vi sriram.ldif
+   22  ldapadd -x -W -D "cn=ldapadm,dc=example,dc=com" -f sriram.ldif
+   23  ldappasswd -s password123 -W -D "cn=ldapadm,dc=example,dc=com" -x "uid=sriram,ou=People,dc=example,dc=com"
+   24  ldapsearch -x cn=sriram -b dc=example,dc=com
+   25  firewall-cmd --permanent --add-service=ldap
+   26  firewall-cmd --reload
+   27  ifconfig | more
+   
+
+LDAP CLient 
+
+ yum install -y openldap-clients nss-pam-ldapd -y
+  131  authconfig --enableldap --enableldapauth --ldapserver=192.168.91.151 --ldapbasedn="dc=example,dc=com" --enablemkhomedir --update
+  133  systemctl restart nslcd
+       su - sriram
+  134  getent passwd sriram
+  
+
