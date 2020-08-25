@@ -1,0 +1,78 @@
+  df -hT
+  499  fdisk -l
+  500  fdisk -l | more
+  501  fdisk /dev/sdb
+  502  partprobe /dev/sdb
+  503  mkfs -t ext4 /dev/sdb14
+  504  df -hT
+  505  fdisk -l
+  506  fdisk -l
+  507  fdisk /dev/sdb
+  508  mkfs -t ext4 /dev/sdb14
+  509  mkdir /test
+  510  mount /dev/sdb14 /test/
+  511  cd /test/
+  512  touch 1 2 3
+  513  ls
+  514  cd ..
+  515  umount /test
+  516  e2fsck -n /dev/sdb14
+  517  dumpe2fs /dev/sdb14 | grep "super"
+  518  dd if=/dev/zero of=/dev/sdb14 bs=512 count=4
+  519  e2fsck  /dev/sdb14
+  520  e2fsck -n /dev/sdb14
+  521  mount /dev/sdb14 /test
+  522  df -hT
+  523  xfs_repair -n /dev/sdb1
+  524  umount /storage/
+  525  xfs_repair -n /dev/sdb1
+  526  dd if=/dev/zero of=/dev/sdb1 bs=1024 count=2
+  527  xfs_repair -n /dev/sdb1
+  528  mount /dev/sdb1 /storage
+  529  xfs_repair  /dev/sdb1
+  530  mount /dev/sdb1 /storage
+  531  lvdisplay
+  532  lvdisplay | less
+  533  lvremove /dev/vg1/lv1
+  534  df -hT
+  535  umount /lvdata
+  536  lvremove /dev/vg1/lv1
+  537  cd /etc/lvm
+  538  ls
+  539  cd archive/
+  540  ls
+  541  cd ..
+  542  cd backup/
+  543  ls
+  544  cat vg1
+  545  cat vg1 | less
+  546  cd .
+  547  cd ..
+  548  cd archive/
+  549  ls
+  550  cat vg1_00001-593300469.vg | less
+  551  vgcfgrestore vg1 -f /etc/lvm/archive/vg1_00001-593300469.vg
+  552  ls -ltr
+  553  vgcfgrestore vg1 -f /etc/lvm/archive/vg1_00001-593300469.vg
+  554  lvs
+  555  lvchange -ay dev/vg1/lv1
+  556  lvscan
+  557  mount /dev/vg1/lv1 /lvdata/
+  558  vgs
+  559  vgscan
+  560  vgs
+  561  history
+  562  cat vg1_00001-593300469.vg 
+  563  ls
+  564  cat vg1_00009-964255814.vg 
+  565  vgcfgrestore vg1 -f /etc/lvm/archive/vg1_00009-964255814.vg 
+  566  ls -ltr
+  567  vgcfgrestore vg1 -f /etc/lvm/archive/vg1_00009-964255814.vg 
+  568  lvs
+  569  lvchange -ay dev/vg1/lv1
+  570  vgs
+  571  lvchange -ay /dev/vg1/lv1
+  572  lvscan
+  573  mount /dev/vg1/lv1 /lvdata/
+  574  df -hT
+  575  cd /lvdata/
