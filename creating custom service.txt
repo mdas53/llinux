@@ -1,0 +1,15 @@
+ vim orgbackups.sh
+  540  sh orgbackups.sh
+  541  cp orgbackups.sh /var/tmp/
+  542  vim /var/tmp/sample.sh
+  543  vim /var/tmp/orgnackups.sh
+  544  vim /var/tmp/orgbackups.sh
+  545  ls -l /var/tmp/orgbackups.sh
+  546  chmod 755 /var/tmp/orgbackups.sh
+  547  cd /etc/systemd/system/
+  548  ls
+  549  vim orgbackups.service
+  550  systemctl daemon-reload
+  551  systemctl enable orgbackups.service
+  552  systemctl start  orgbackups.service
+  553  systemctl status  orgbackups.service
