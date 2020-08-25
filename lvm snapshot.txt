@@ -1,0 +1,55 @@
+  cd
+  581  lvs
+  582  df -hT
+  583  vgs
+  584  lvcreate -L 250M -s -n snapdata /dev/vg1/lv1
+  585  lvs
+  586  vgs
+  587  ls
+  588  lvdisplay /dev/vg1/snapdata
+  589  ls
+  590  mkdir snap
+  591  cd /root/Desktop/* snap/
+  592  cd Desktop
+  593  cd /root/Desktop/* snap/
+  594  cd
+  595  cp /root/Desktop/* snap/
+  596  df -hT
+  597  cd /lvdata
+  598  ls
+  599  cd snap/
+  600  cd snap
+  601  cd /snap/
+  602  cd 
+  603  cd snap/
+  604  ls
+  605  cd /tmp/
+  606  ls
+  607  cd
+  608  cd Desktop
+  609  ls
+  610  cd /lvdata/
+  611  cd dnap/
+  612  cd
+  613  cd snap/
+  614  cp /storage/* .
+  615  cp storage/* .
+  616  df -hT
+  617  cp  /storage/* snap/
+  618  df -hT
+  619  lvdispaly /dev/vg1/snapdata
+  620  lvdisplay /dev/vg1/snapdata
+  621  lvs
+  622  cd
+  623  umount /lvdata/
+  624  lvconvert --merge /dev/vg1/snapdata
+  625  df -hT
+  626  lvs
+  627  mount /dev/vg1/lv1 /lvdata/
+  628  df -hT
+  629  cd /lvdata/
+  630  ls
+  631  vim /etc/lvm/lvm.conf
+  632  lvs
+  633  vgs
+  
