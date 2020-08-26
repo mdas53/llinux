@@ -1,0 +1,13 @@
+ cat /proc/cpuinfo
+  502  cat /proc/meminfo
+  503  dmidecode | less
+  504  dmidecode -t memory | less
+  505  lspci 
+  506* 
+  507  lspci | grep      -i fc
+  508  lsusb
+  509  lsscsi -v
+  510  ip addr
+  511  ip link
+  512  ip r
+  513  lspci | grep -i fc
