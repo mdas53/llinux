@@ -1,0 +1,36 @@
+  568  smbpasswd -a natasha
+  569  awk '{print "this is redhat linux class "}'
+  570  cp /etc/passwd /tmp/passwd
+  571  awk '{print $1}' /tmp/passwd
+  572  awk -F: '{print $1}' /tmp/passwd
+  573  awk -F: '{print $2}' /tmp/passwd
+  574  awk -F: '{print $1,$2}' /tmp/passwd
+  575  awk -F: '{print $1,$2,$3}' /tmp/passwd
+  576  echo " Hello user " | awk '{ $2="moulima"; print $0}'
+  577  echo " Hello user " | awk '{ $1="moulima"; print $0}'
+  578  vim file
+  579  awk 'BEGIN {print "the file has:"} {print $0}' file
+  580  awk 'BEGIN {print "the file has:"} {print $0}' file END {print "File Ends"}' file
+  581  BEGIN{FS=":"; OFS="-"} {print $1,$3,$5}' /tmp/passwd
+  582  BEGIN{FS=":"; OFS="-"} {print $1,$3,$5}' /tmp/passwd
+  583  awk 'BEGIN{FS=":"; OFS="-"} {print $1,$3,$5}' /tmp/passwd
+  584  BEGIN{FS=":"; OFS="-"} {print $1,$3,$5}' /tmp/passwd
+  585  awk 'BEGIN{FS=":"; OFS="-"} {print $1,$3,$5}' /tmp/passwd
+  586  awk 'BEGIN{FS=":"; OFS="-"} {print $1,$4,$6}' /tmp/passwd
+  587  sed -n 22p /tmp/passwd
+  588  sed -n 22d /tmp/passwd
+  589  sed -i 's/suresh/harish/g'   /tmp/passwd
+  590  sed -i 's/suresh/harish/g'   /tmp/passwd >file1.txt
+  591  cat file1
+  592  ls
+  593  sed -i 's/suresh/harish/g'   /tmp/passwd > file1.txt
+  594  cat file1
+  595  sed -i 's/suresh/harish/g'   /tmp/passwd > file.txt
+  596  cat file
+  597  sed -i 's/suresh/harish/g'   /tmp/passwd > file.txt
+  598  sed  's/suresh/harish/g'   /tmp/passwd 
+  599  sed -e  's/^suresh.*bash$/g'   /tmp/passwd 
+  600  sed   's/^suresh.*bash$/g'   /tmp/passwd 
+  601  sed   's/^suresh.*bash$//g'   /tmp/passwd 
+  602  vim array.sh
+  603  sh array.sh
